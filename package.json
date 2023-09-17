@@ -8,20 +8,21 @@
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src",
     "test": "vitest",
+    "test:commit": "vitest run --passWithNoTests",
     "prepare": "husky install",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint src --max-warnings=0"
   },
   "husks": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.+(js|jsx|ts|tsx|md|mdx|yml|yaml)": [
-      "npm lint --fix",
-      "npm test run"
+      "npm run lint --fix",
+      "npm run test:commit"
     ]
   },
   "keywords": [
@@ -38,9 +39,13 @@
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
     "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "tsx": "^3.12.10",
     "typescript": "^5.2.2",
