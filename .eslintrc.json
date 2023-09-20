@@ -18,10 +18,8 @@
         "newlinesBetween": "always",
         "groups": [
           "module",
-          "/^@shared/",
           "absolute",
           "/utils/",
-          "/^@/models/",
           ["parent", "sibling", "index"]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
