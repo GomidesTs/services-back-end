@@ -6,6 +6,7 @@ type UpdateSaleResponse = Sale;
 
 export class UpdateSale {
   constructor(private saleRepository: SaleRepository) {}
+
   async execute(data: SaleDTO): Promise<UpdateSaleResponse> {
     data.percentage = 1 - data.percentage / 100;
 
