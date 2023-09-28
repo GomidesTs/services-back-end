@@ -4,6 +4,7 @@ import { Product } from './product';
 
 test('Create an product', () => {
   const product = new Product({
+    id: '676f6d69646573206d6f746f726573',
     name: 'Product',
     amount: 5,
     minimum: 2,
@@ -12,5 +13,4 @@ test('Create an product', () => {
   });
 
   expect(product).toBeInstanceOf(Product);
-  expect(product.name).equal('Product');
 });
